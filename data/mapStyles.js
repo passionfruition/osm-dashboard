@@ -4,12 +4,12 @@ import {Stroke, Style} from "ol/style";
 let motorwayStyle = [
     new Style({
         stroke: new Stroke({
-            color: '#800080',
+            color: '#4B0082',
             width: 5,
         }),
     }), new Style({
         stroke: new Stroke({
-            color: '#DA70D6',
+            color: '#8A2BE2',
             width: 3,
         }),
     })
