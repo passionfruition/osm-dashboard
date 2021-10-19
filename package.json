@@ -1,0 +1,32 @@
+{
+  "name": "osm-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build --public-url . index.html",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url https://github.com/passionfruition/osm-dashboard/",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/passionfruition/osm-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/passionfruition/osm-dashboard/issues"
+  },
+  "homepage": "https://github.com/passionfruition/osm-dashboard#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "geojson-vt": "^3.2.1",
+    "gh-pages": "^3.2.3",
+    "ol": "^6.9.0",
+    "ol-ext": "^3.2.10"
+  }
+}

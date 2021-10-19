@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>High Priority Roads</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- OL3 -->
+    <link rel="stylesheet" href="//openlayers.org/en/latest/css/ol.css" />
+    <script type="text/javascript" src="//openlayers.org/en/latest/build/ol.js"></script>
+    <!-- filters -->
+    <script type="text/javascript" src="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<section class="hero is-black is-small">
+    <div class="hero-foot mt-2">
+        <div class="hero-foot mt-2">
+            <nav class="tabs is-medium is-boxed is-fullwidth is-centered">
+                <div class="container">
+                    <ul id="country-tab-list">
+                    </ul>
+                </div>
+            </nav>
+        </div>
+</section>
+<br>
+<div class="tile is-ancestor px-4">
+    <div id="stat-boxes" class="tile is-2 is-vertical is-parent">
+        <div class="tile is-child box stat-box">
+            <div class="has-text-centered">
+                <div>
+                    <p class="heading">Regions</p>
+                    <p id="num-regions" class="title stat"></p>
+                </div>
+            </div>
+        </div>
+        <div class="tile is-child box stat-box">
+            <div class="has-text-centered">
+                <div>
+                    <p class="heading">Primary</p>
+                    <p id="primary-data" class="title stat"></p>
+                </div>
+            </div>
+        </div>
+        <div class="tile is-child box stat-box">
+            <div class="has-text-centered">
+                <div>
+                    <p class="heading">Secondary</p>
+                    <p id="secondary-data" class="title stat"></p>
+                </div>
+            </div>
+        </div>
+        <div class="tile is-child box stat-box">
+            <div class="has-text-centered">
+                <div>
+                    <p class="heading">Tertiary</p>
+                    <p id="tertiary-data" class="title stat"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map-tile" class="tile is-parent">
+        <div class="tile is-child">
+            <div id="map">
+                <div id="button-div">
+                    <button id="remove-boundary-button" class="button is-ghost">✖ Remove boundary</button>
+                    <button id="before-after-button" class="button is-dark">Show roads after</button>
+                    <button id="mode-button" class="button is-light">Switch to slider mode</button>
+                    <div id="classification-dropdown" class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button id="classification-dropdown-button" class="button is-link" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span>Road types ▼</span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="classification-dropdown-menu" role="menu">
+                            <div id="classification-dropdown-list" class="dropdown-content">
+                                <div class="dropdown-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="motorway-checkbox" checked>
+                                        Motorway
+                                    </label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="trunk-checkbox" checked>
+                                        Trunk
+                                    </label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="primary-checkbox" checked>
+                                        Primary
+                                    </label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="secondary-checkbox" checked>
+                                        Secondary
+                                    </label>
+                                </div>
+                                <div class="dropdown-item">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="tertiary-checkbox" checked>
+                                        Tertiary
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="state-dropdown" class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button id="state-dropdown-button" class="button is-link" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span>Zoom to region ▼</span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="state-dropdown-menu" role="menu">
+                            <div id="state-dropdown-list" class="dropdown-content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal is-active" id="loading-modal">
+                    <div class="modal-background"></div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <span id="spinner"></span>
+                                Loading data.. Please wait...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="data-type-div">
+                    <h1 id="data-type-text"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
