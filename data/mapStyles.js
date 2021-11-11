@@ -2,70 +2,75 @@
 import {Stroke, Style} from "ol/style";
 
 let motorwayStyle = [
+    // new Style({
+    //     stroke: new Stroke({
+    //         color: '#22577a',
+    //         width: 5,
+    //     }),
+    // }), 
     new Style({
         stroke: new Stroke({
-            color: '#4B0082',
-            width: 5,
-        }),
-    }), new Style({
-        stroke: new Stroke({
-            color: '#8A2BE2',
+            color: '#22577a',
             width: 3,
         }),
     })
 ];
 
 let trunkStyle = [
+    // new Style({
+    //     stroke: new Stroke({
+    //         color: '#38a3a5',
+    //         width: 4,
+    //     }),
+    // }), 
     new Style({
         stroke: new Stroke({
-            color: '#0000FF',
-            width: 4,
-        }),
-    }), new Style({
-        stroke: new Stroke({
-            color: '#add8e6',
+            color: '#38a3a5',
             width: 2,
         }),
     })
 ];
 
 let primaryStyle = [
+    // new Style({
+    //     stroke: new Stroke({
+    //         color: '#57cc99',
+    //         width: 4,
+    //     }),
+    // }), 
     new Style({
         stroke: new Stroke({
-            color: '#FF0000',
-            width: 4,
-        }),
-    }), new Style({
-        stroke: new Stroke({
-            color: '#FF7F7F',
+            color: '#57cc99',
             width: 2,
         }),
     })
 ];
 
 let secondaryStyle = [
+    // new Style({
+    //     stroke: new Stroke({
+    //         color: '#80ed99',
+    //         width: 4,
+    //     }),
+    // }), 
     new Style({
         stroke: new Stroke({
-            color: '#FFA500',
-            width: 4,
-        }),
-    }), new Style({
-        stroke: new Stroke({
-            color: '#FFD580',
+            color: '#80ed99',
             width: 2,
         }),
     })
 ];
 
 let tertiaryStyle = [
+    // new Style({
+    //     stroke: new Stroke({
+    //         color: '#c7f9cc',
+    //         width: 4,
+    //     }),
+    // }), 
     new Style({
         stroke: new Stroke({
-            color: '#FFFF00',
-            width: 4,
-        }),
-    }), new Style({
-        stroke: new Stroke({
-            color: '#FFFF99',
+            color: '#c7f9cc',
             width: 2,
         }),
     })
